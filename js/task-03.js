@@ -12,7 +12,7 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-const imgCreator = ({url, alt}) => {
+/* const imgCreator = ({url, alt}) => {
 const liEl = document.createElement('li');
 const imgEl = document.createElement('img');
 imgEl.src = url;
@@ -21,6 +21,9 @@ imgEl.style.width = '800px';
 liEl.appendChild(imgEl);
 return liEl;
 }
-const galleryEl = document.querySelector('#gallery')
 galleryEl.append(...images.map(imgCreator));
+*/
 
+
+const galleryEl = document.querySelector('#gallery');
+images.map( img => galleryEl.insertAdjacentHTML('beforebegin', `<img src="${img.url}" alt="${img.alt}"></img>`)) 

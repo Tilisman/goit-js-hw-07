@@ -42,7 +42,7 @@ refs.input.addEventListener('input', (event) => {
 })
 
 refs.destroyBtn.addEventListener('click', () => {
-	refs.boxesContainer.innerHTML('');
+	refs.boxesContainer.innerHTML = '';
 });
 
 

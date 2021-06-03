@@ -35,7 +35,6 @@ function createBoxes(amount) {
 
 refs.input.addEventListener('input', (event) => {
 	let value = event.target.value
-	console.log(value);
 	refs.renderBtn.addEventListener('click', () => {		
 		refs.boxesContainer.append(...createBoxes(value))
 })

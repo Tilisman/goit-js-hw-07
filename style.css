@@ -1,0 +1,15 @@
+#gallery{
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	
+}
+
+#gallery > li{
+	margin-bottom: 10px;
+}
+
+img {
+	display: block;
+	max-width: 800px;
+}

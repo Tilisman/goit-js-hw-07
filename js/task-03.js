@@ -12,18 +12,27 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-/* const imgCreator = ({url, alt}) => {
-const liEl = document.createElement('li');
-const imgEl = document.createElement('img');
-imgEl.src = url;
-imgEl.alt = alt;
-imgEl.style.width = '800px';
-liEl.appendChild(imgEl);
-return liEl;
-}
-galleryEl.append(...images.map(imgCreator));
-*/
 
 
-const galleryEl = document.querySelector('#gallery');
-images.map( img => galleryEl.insertAdjacentHTML('beforebegin', `<img src="${img.url}" alt="${img.alt}"></img>`)) 
+const galleryRef = document.querySelector('#gallery');
+
+
+const imageRef = [...images].map( img => `<li><img src="${img.url}" alt="${img.alt}"></img></li>`) 
+imageRef.toString();
+console.log(imageRef);
+const subGalleryRef = document.createElement('ul');
+subGalleryRef.classList.add('js-sub-gallery')
+galleryRef.insertAdjacentHTML('afterbegin', `${imageRef[0]}`+`${imageRef[1]}`+`${imageRef[2]}`) 
+
+// const imgCreator = ({url, alt}) => {
+// const imgEl = document.createElement('img');
+// const liEl = document.createElement('li');
+// imgEl.src = url;
+// imgEl.alt = alt;
+// imgEl.style.width = '800px';
+// liEl.appendChild(imgEl);
+// return liEl;
+// }
+// subGalleryRef.append(...images.map(imgCreator));
+// console.log(subGalleryRef);
+

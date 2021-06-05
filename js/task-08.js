@@ -20,7 +20,7 @@ const genRGB = function () {
 function createBoxes(amount) {
 	let size = 30;	
 	const arr = range(amount);
-	return arr.map((elem) => {
+	return arr.map(() => {
 		const box = document.createElement('div')
 		box.style.width = `${size}px`
 		box.style.height = `${size}px`
@@ -32,16 +32,21 @@ function createBoxes(amount) {
 
 
 
-
 refs.input.addEventListener('input', (event) => {
 	let value = event.target.value
-	refs.renderBtn.addEventListener('click', () => {		
-		refs.boxesContainer.append(...createBoxes(value))
-})
-})
+	refs.renderBtn.addEventListener('click', () => {	
+		const boxes = document.createElement('div')
+		boxes.append(...createBoxes(value))	
+		refs.boxesContainer.append(boxes)
+		
+	})
+	console.log(value);
+});
 
 refs.destroyBtn.addEventListener('click', () => {
-	refs.boxesContainer.innerHTML = '';
+	// refs.boxesContainer.innerHTML = '';
+	// refs.input.value = '';
+	document.location.reload();
 });
 
 
